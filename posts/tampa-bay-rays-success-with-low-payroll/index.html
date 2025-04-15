@@ -253,6 +253,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>So, we’ve looked at the Rays’ recent success, but has it just been a short-term flash in the pan or is it more than that?</p>
+<p>Well, from 2000 to 2023 Tampa Bay has 1879 total wins which ranks fifteenth in the MLB in that time period.</p>
+<p>So, they haven’t won the most, but have they achieved their secondary goal of not spending a ton of money?</p>
+<p>That is a resounding yes as they have spent the second least amount of money at $1,332,814,453 in that same timeframe.</p>
+<p>The name of the “Moneyball” game is to spend the least amount of money while getting the most wins. Who’s been the best at that?</p>
+<p>You would think it would possibly be the team that revolutionized it, the Oakland A’s but that is not the case. The A’s sit at around $764,680 per win, meanwhile the team who has spent the least amount of money per win is the Tampa Bay Rays at $709,321 per win. To put that in perspective, the New York Yankees have spent the most for each win at $2,109,308, that is an almost 200% increase.</p>
+<p>Now is it worth it to spend all that money? Depends on who you ask. If you ask the Rays owners, they will probably say no since they have proven you can still have successful seasons without breaking the bank. On the other hand, the Yankees won two World Series and racked up over 2,100 wins due to spending all that money. It’s just all about perspective.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -273,38 +280,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ath <span class="ot">&lt;-</span> moneyball <span class="sc">|&gt;</span> </span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(team <span class="sc">==</span> <span class="st">'Oakland Athletics'</span>)</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>moneyball, </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"lightgrey"</span>) <span class="sc">+</span> </span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>(</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>ath, </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"#EFB21E"</span>) <span class="sc">+</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb, </span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"#8FBCE6"</span>) <span class="sc">+</span>   </span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">2420.578</span>) <span class="sc">+</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>tb, <span class="fu">aes</span>(<span class="at">x=</span> totalwins, <span class="at">y=</span>totalpayroll, <span class="at">label=</span> team)) <span class="sc">+</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>ath, <span class="fu">aes</span>(<span class="at">x=</span> totalwins, <span class="at">y=</span>totalpayroll, <span class="at">label=</span> team)) <span class="sc">+</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Total team payroll (in millions)"</span>, </span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Total Wins"</span>, </span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span>  <span class="st">"Money spent per win </span><span class="sc">\n</span><span class="st">(in millions)"</span>,</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">title=</span><span class="st">"The Rays have perfected the </span><span class="sc">\"</span><span class="st">Moneyball</span><span class="sc">\"</span><span class="st"> strategy"</span>,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"The Tampa Bay Rays franchise has spent the least amount of money per win than any other team in the MLB since 2000."</span>,</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"By: Trevor Darnell | Source: Baseball Reference"</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">9</span>),</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.size =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>),</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>nyy <span class="ot">&lt;-</span> moneyball <span class="sc">|&gt;</span> </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(team <span class="sc">==</span> <span class="st">'New York Yankees'</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>threeclubs <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(tb, ath, nyy)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>moneyball, </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"lightgrey"</span>) <span class="sc">+</span> </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>(</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>ath, </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"#EFB21E"</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>tb, </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"#8FBCE6"</span>) <span class="sc">+</span>   </span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">data=</span>nyy, </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>totalwins, <span class="at">y=</span>totalpayroll, <span class="at">size=</span>spentperwin), </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">color=</span><span class="st">"#003087"</span>) <span class="sc">+</span>  </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">2420.578</span>) <span class="sc">+</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>threeclubs, <span class="fu">aes</span>(<span class="at">x=</span> totalwins, <span class="at">y=</span>totalpayroll, <span class="at">label=</span> team)) <span class="sc">+</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">x=</span><span class="st">"Total Wins"</span>, </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y=</span><span class="st">"Total team payroll (in millions)"</span>, </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span>  <span class="st">"Money spent per win </span><span class="sc">\n</span><span class="st">(in millions)"</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">title=</span><span class="st">"The Rays have perfected the </span><span class="sc">\"</span><span class="st">Moneyball</span><span class="sc">\"</span><span class="st"> strategy"</span>,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle=</span><span class="st">"The Tampa Bay Rays franchise has spent the least amount of money per win than any other team in the MLB since 2000."</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption=</span><span class="st">"By: Trevor Darnell | Source: Baseball Reference"</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">9</span>),</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.size =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>),</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -314,6 +329,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>There is one thing that makes the MLB different from any other major league in America like the NBA and NFL and that’s the minor league system. The MLB thrives on the minor league system and having teams be able to develop and grow a player’s game straight out of high school, so they are ready when it comes time for them to make the major league roster.</p>
+<p>The Minor League Baseball League (MiLB) is currently made up of five different levels, Rookie, Low-A, High-A, Double-A, and Triple-A. Each MLB franchise has a team in each of these levels that is their affiliate where the franchise can move players up or down depending on their performance.</p>
+<p>These different leagues are incredibly important for MLB teams’ long-term success, as strong player development allows prospects to make an impact in the majors more quickly. This also enables franchises to benefit from rookie contracts, which are less expensive, allowing the front office to allocate money to other areas of the team.</p>
+<p>Now, the question is, what franchise has been the best at developing their players?</p>
+<p>The franchises that have been the most successful at the Triple-A level since 2008 are the New York Yankees (1276 total wins), Tampa Bay Rays (1263 total wins), and Oakland A’s (1237 total wins) in that order. When you think about it that top three does make sense, the Yankees who have the most wins since 2000 because the combination of development and getting the best players and two teams that rely on development to obtain wins.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -384,23 +404,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="iayeydsvey" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#iayeydsvey table {
+<div id="bomnnxmitu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bomnnxmitu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#iayeydsvey thead, #iayeydsvey tbody, #iayeydsvey tfoot, #iayeydsvey tr, #iayeydsvey td, #iayeydsvey th {
+#bomnnxmitu thead, #bomnnxmitu tbody, #bomnnxmitu tfoot, #bomnnxmitu tr, #bomnnxmitu td, #bomnnxmitu th {
   border-style: none;
 }
 
-#iayeydsvey p {
+#bomnnxmitu p {
   margin: 0;
   padding: 0;
 }
 
-#iayeydsvey .gt_table {
+#bomnnxmitu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -426,12 +446,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_caption {
+#bomnnxmitu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#iayeydsvey .gt_title {
+#bomnnxmitu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -443,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#iayeydsvey .gt_subtitle {
+#bomnnxmitu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -455,7 +475,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#iayeydsvey .gt_heading {
+#bomnnxmitu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -467,13 +487,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_bottom_border {
+#bomnnxmitu .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_col_headings {
+#bomnnxmitu .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -488,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_col_heading {
+#bomnnxmitu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -508,7 +528,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iayeydsvey .gt_column_spanner_outer {
+#bomnnxmitu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -520,15 +540,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#iayeydsvey .gt_column_spanner_outer:first-child {
+#bomnnxmitu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#iayeydsvey .gt_column_spanner_outer:last-child {
+#bomnnxmitu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#iayeydsvey .gt_column_spanner {
+#bomnnxmitu .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -540,11 +560,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#iayeydsvey .gt_spanner_row {
+#bomnnxmitu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#iayeydsvey .gt_group_heading {
+#bomnnxmitu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -570,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#iayeydsvey .gt_empty_group_heading {
+#bomnnxmitu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -585,15 +605,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#iayeydsvey .gt_from_md > :first-child {
+#bomnnxmitu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#iayeydsvey .gt_from_md > :last-child {
+#bomnnxmitu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#iayeydsvey .gt_row {
+#bomnnxmitu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -612,7 +632,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#iayeydsvey .gt_stub {
+#bomnnxmitu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -625,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iayeydsvey .gt_stub_row_group {
+#bomnnxmitu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -639,15 +659,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#iayeydsvey .gt_row_group_first td {
+#bomnnxmitu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#iayeydsvey .gt_row_group_first th {
+#bomnnxmitu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#iayeydsvey .gt_summary_row {
+#bomnnxmitu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -657,16 +677,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iayeydsvey .gt_first_summary_row {
+#bomnnxmitu .gt_first_summary_row {
   border-top-style: none;
   border-top-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_first_summary_row.thick {
+#bomnnxmitu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#iayeydsvey .gt_last_summary_row {
+#bomnnxmitu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -676,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_grand_summary_row {
+#bomnnxmitu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -686,7 +706,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iayeydsvey .gt_first_grand_summary_row {
+#bomnnxmitu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -696,7 +716,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_last_grand_summary_row_top {
+#bomnnxmitu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -706,11 +726,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_striped {
+#bomnnxmitu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#iayeydsvey .gt_table_body {
+#bomnnxmitu .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -719,7 +739,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_footnotes {
+#bomnnxmitu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -733,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_footnote {
+#bomnnxmitu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -742,7 +762,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iayeydsvey .gt_sourcenotes {
+#bomnnxmitu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -756,7 +776,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#iayeydsvey .gt_sourcenote {
+#bomnnxmitu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -764,72 +784,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#iayeydsvey .gt_left {
+#bomnnxmitu .gt_left {
   text-align: left;
 }
 
-#iayeydsvey .gt_center {
+#bomnnxmitu .gt_center {
   text-align: center;
 }
 
-#iayeydsvey .gt_right {
+#bomnnxmitu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#iayeydsvey .gt_font_normal {
+#bomnnxmitu .gt_font_normal {
   font-weight: normal;
 }
 
-#iayeydsvey .gt_font_bold {
+#bomnnxmitu .gt_font_bold {
   font-weight: bold;
 }
 
-#iayeydsvey .gt_font_italic {
+#bomnnxmitu .gt_font_italic {
   font-style: italic;
 }
 
-#iayeydsvey .gt_super {
+#bomnnxmitu .gt_super {
   font-size: 65%;
 }
 
-#iayeydsvey .gt_footnote_marks {
+#bomnnxmitu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#iayeydsvey .gt_asterisk {
+#bomnnxmitu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#iayeydsvey .gt_indent_1 {
+#bomnnxmitu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#iayeydsvey .gt_indent_2 {
+#bomnnxmitu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#iayeydsvey .gt_indent_3 {
+#bomnnxmitu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#iayeydsvey .gt_indent_4 {
+#bomnnxmitu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#iayeydsvey .gt_indent_5 {
+#bomnnxmitu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#iayeydsvey .katex-display {
+#bomnnxmitu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#iayeydsvey div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bomnnxmitu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -921,6 +941,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>At the end of the day success in the MLB depends on the franchise you are talking about. Some teams like the Tampa Bay Rays have made a name for themselves by creating teams that doesn’t like to spend money and ships off players when they are about to reach a big payday but do still win games and aren’t strangers to making the playoffs.</p>
 
 
 
