@@ -186,7 +186,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWxi">mlb <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9uZXliYWxs">moneyball <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmF5cw==">rays <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGVmZW5zZW1lbg==">defensemen <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWxi">mlb <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bW9uZXliYWxs">moneyball <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmhs">nhl <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmF5cw==">rays <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c2xhdmlu">slavin <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -200,7 +200,57 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bWxiJTJDcmF5cyUyQ21vbmV5YmFsbA==" data-listing-date-sort="1744606800000" data-listing-file-modified-sort="1744682425381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1852">
+<div class="quarto-post image-right" data-index="0" data-categories="bmhsJTJDc2xhdmluJTJDZGVmZW5zZW1lbg==" data-listing-date-sort="1746334800000" data-listing-file-modified-sort="1746283035585" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="321">
+<div class="thumbnail">
+<p><a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external"></a></p><a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/image.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external">Is Jaccob Slavin the Most Underrated Defenseman in the NHL?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bmhs'); return false;">
+nhl
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('c2xhdmlu'); return false;">
+slavin
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ZGVmZW5zZW1lbg=='); return false;">
+defensemen
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><span class="fu">library</span>(ggbeeswarm)</span>
+<span id="cb1-3"><span class="fu">library</span>(ggalt)</span>
+<span id="cb1-4"><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-5"></span>
+<span id="cb1-6">basicstats <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"nhl_players_skater_stats_15_25.csv"</span>)</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">basicplustoi <span class="ot">&lt;-</span> basicstats <span class="sc">|&gt;</span> </span>
+<span id="cb1-9">  <span class="fu">…</span><span class="at"></span><span class="fu"></span><span class="st"></span><span class="st"></span><span class="at"></span><span class="st"></span><span class="sc"></span></span><span id="cb1-10"><span class="fu"></span><span class="at"></span><span class="fu"></span><span class="at"></span><span class="fu"></span><span class="sc"></span></span><span id="cb1-11"><span class="fu"></span><span class="at"></span><span class="sc"></span><span class="dv"></span><span class="sc"></span></span><span id="cb1-12"><span class="fu"></span><span class="at"></span><span class="sc"></span><span class="sc"></span></span><span id="cb1-13"><span class="fu"></span><span class="at"></span><span class="sc"></span></span><span id="cb1-14"></span><span id="cb1-15"><span class="ot"></span><span class="sc"></span></span><span id="cb1-16"><span class="fu"></span><span class="sc"></span><span class="st"></span></span><span id="cb1-17"></span><span id="cb1-18"><span class="ot"></span><span class="sc"></span></span><span id="cb1-19"><span class="fu"></span><span class="sc"></span></span><span id="cb1-20"><span class="fu"></span></span><span id="cb1-21"><span class="at"></span><span class="fu"></span></span><span id="cb1-22"><span class="at"></span><span class="fu"></span><span class="sc"></span></span><span id="cb1-23"><span class="at"></span><span class="fu"></span></span><span id="cb1-24"><span class="sc"></span></span><span id="cb1-25"><span class="fu"></span><span class="sc"></span><span class="dv"></span></span><span id="cb1-26"><span class="sc"></span><span class="fl"></span></span><span id="cb1-27"></span><span id="cb1-28"><span class="ot"></span><span class="sc"></span></span><span id="cb1-29"><span class="fu"></span><span class="sc"></span><span class="st"></span></span><span id="cb1-30"></span><span id="cb1-31"><span class="fu"></span><span class="sc"></span></span><span id="cb1-32"><span class="fu"></span><span class="at"></span><span class="fu"></span><span class="at"></span><span class="at"></span><span class="at"></span><span class="st"></span><span class="sc"></span></span><span id="cb1-33"><span class="fu"></span><span class="at"></span><span class="fu"></span><span class="at"></span><span class="at"></span><span class="at"></span><span class="st"></span><span class="sc"></span></span><span id="cb1-34"><span class="fu"></span><span class="st"></span><span class="at"></span><span class="st"></span><span class="at"></span><span class="fl"></span></span><span id="cb1-35"><span class="at"></span><span class="sc"></span><span class="cn"></span><span class="at"></span><span class="dv"></span></span><span id="cb1-36"><span class="at"></span><span class="dv"></span><span class="at"></span><span class="dv"></span><span class="sc"></span></span><span id="cb1-37"><span class="fu"></span><span class="at"></span><span class="fl"></span><span class="sc"></span></span><span id="cb1-38"><span class="fu"></span><span class="at"></span><span class="fl"></span><span class="sc"></span></span><span id="cb1-39"><span class="fu"></span><span class="fu"></span><span class="at"></span><span class="dv"></span><span class="at"></span><span class="dv"></span><span class="at"></span><span class="st"></span><span class="sc"></span><span class="st"></span><span class="at"></span><span class="st"></span><span class="at"></span><span class="fl"></span><span class="sc"></span></span><span id="cb1-40"><span class="fu"></span><span class="fu"></span><span class="at"></span><span class="dv"></span><span class="at"></span><span class="dv"></span><span class="at"></span><span class="st"></span><span class="at"></span><span class="fl"></span><span class="sc"></span></span><span id="cb1-41"><span class="fu"></span></span><span id="cb1-42"><span class="at"></span><span class="st"></span></span><span id="cb1-43"><span class="at"></span><span class="st"></span></span><span id="cb1-44"><span class="at"></span><span class="st"></span></span><span id="cb1-45"><span class="at"></span><span class="st"></span></span><span id="cb1-46"><span class="at"></span><span class="st"></span></span><span id="cb1-47"><span class="sc"></span></span><span id="cb1-48"><span class="fu"></span><span class="sc"></span></span><span id="cb1-49"><span class="fu"></span></span><span id="cb1-50"><span class="at"></span><span class="fu"></span><span class="at"></span><span class="fl"></span><span class="at"></span><span class="st"></span></span><span id="cb1-51"><span class="at"></span><span class="fu"></span><span class="at"></span><span class="dv"></span></span><span id="cb1-52"><span class="at"></span><span class="fu"></span></span><span id="cb1-53"><span class="at"></span><span class="st"></span></span><span id="cb1-54"></span></code></pre></div></details><div class="cell-output-display"><div><figure class="figure"><p></p></figure></div></div></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/is-jaccob-slavin-the-most-underrated-defensemen-in-the-nhl/index.html" class="no-external">
+<div class="listing-date">
+May 4, 2025
+</div>
+<div class="listing-author">
+Trevor Darnell
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bWxiJTJDcmF5cyUyQ21vbmV5YmFsbA==" data-listing-date-sort="1744606800000" data-listing-file-modified-sort="1746283033457" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1847">
 <div class="thumbnail">
 <p><a href="./posts/tampa-bay-rays-success-with-low-payroll/index.html" class="no-external"></a></p><a href="./posts/tampa-bay-rays-success-with-low-payroll/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/tampa-bay-rays-success-with-low-payroll/image.png" class="thumbnail-image"></p>
@@ -225,7 +275,7 @@ moneyball
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/tampa-bay-rays-success-with-low-payroll/index.html" class="no-external">Every sports team has the same goal, to win as many games as possible. For some teams it’s not that simple. Yes, they still want to win games and win titles, but they are…</a>
+<a href="./posts/tampa-bay-rays-success-with-low-payroll/index.html" class="no-external">Every sports team has the same goal, to win as many games as possible. For some teams, it’s not that simple. Yes, they still want to win games and win titles, but they are…</a>
 </div>
 </div>
 <div class="metadata">
